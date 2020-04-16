@@ -1,9 +1,37 @@
-<ion-header>
+<ion-header [translucent]="true">
+
   <ion-toolbar>
-    <ion-title>pizza-detail</ion-title>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
+    <ion-title>
+      Détail de la pizza
+    </ion-title>
+
+    <ion-icon name="return-down-back-sharp" routerLink="" routerDirection="root"></ion-icon>
+
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content  [fullscreen]="true">
+
+  <ion-card class="mt-5">
+
+    <img src="../../../assets/jurassic-park.jpg">
+
+    <ion-card-header>
+      <ion-card-title>Titre de la pizza</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Contenu de la pizza</p>
+    </ion-card-content>
+
+  </ion-card>
+
+  <app-footer></app-footer>
 
 </ion-content>

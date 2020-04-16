@@ -1,20 +1,43 @@
 <ion-header [translucent]="true">
+
   <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
     <ion-title>
-      Blank
+      Jurassic Pizza
     </ion-title>
+
+    <a class="home-icon"  routerLink=""><ion-icon name="cart-sharp"></ion-icon></a>
+    <a class="home-icon"><ion-icon name="remove-sharp"></ion-icon></a>
+    <a class="home-icon" routerLink="">
+      <ion-badge id="cart-badge" color="success">2</ion-badge>
+      <ion-icon name="build-sharp"></ion-icon>
+    </a>
+  
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="card">
+
+    <div class="card-header text-center">
+      Titre de la pizza
+    </div>
+
+    <div class="card-body">
+      Contenu de la pizza
+      <button class="btn mt-2">Commander</button>
+      &nbsp;
+      <button class="btn mt-2" routerLink="/pizza-detail">Détails</button>
+    </div>
+
   </div>
+
+  <app-footer></app-footer>
+
 </ion-content>
