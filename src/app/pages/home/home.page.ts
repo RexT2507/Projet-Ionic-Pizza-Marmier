@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
+import { CartPage } from '../cart/cart.page';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,11 @@ export class HomePage implements OnInit {
     this.cartService.addPizza(pizza);
   }
 
-  openCart(pizza) {
-
+  async openCart() {
+    let modal = await this.modalCtrl.create({
+      component: CartPage,
+      cssClass: 'cart-modal'
+    });
+    modal.present();
   }
 }
