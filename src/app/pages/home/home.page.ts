@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { CartPage } from '../cart/cart.page';
+import { PizzaService } from 'src/app/services/pizza.service';
 
 @Component({
   selector: 'app-home',
@@ -12,15 +13,23 @@ import { CartPage } from '../cart/cart.page';
 export class HomePage implements OnInit {
 
   cart = [];
-  pizza = [];
+  pizza: any;
   cartItemCount: BehaviorSubject<number>;
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController) {}
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private pizzaService: PizzaService) {}
 
   ngOnInit() {
-    this.pizza = this.cartService.getPizza();
+    this.getPizza();
     this.cart = this.cartService.getCart();
     this.cartItemCount = this.cartService.getCartItemCount();
+  }
+
+  getPizza(): void {
+    this.pizzaService.getAllPizza().subscribe(
+      res => {
+        this.pizza = res;
+      }
+    );
   }
 
   addToCart(pizza) {
@@ -28,7 +37,7 @@ export class HomePage implements OnInit {
   }
 
   async openCart() {
-    let modal = await this.modalCtrl.create({
+    const modal = await this.modalCtrl.create({
       component: CartPage,
       cssClass: 'cart-modal'
     });

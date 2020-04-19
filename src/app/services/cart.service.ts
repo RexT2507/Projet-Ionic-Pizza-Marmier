@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { PizzaService } from './pizza.service';
 
 export interface Pizza {
   id: number;
@@ -21,14 +22,29 @@ export class CartService {
     { id: 3, photo: '../../../assets/jurassic-park.jpg', nom: 'Pizza Mozzarela', prix: 6.99, amount: 1, ingredient: []}
   ];
 
+  datas: any;
+
   private cart = [];
 
   private cartItemCount = new BehaviorSubject(0);
 
-  constructor() { }
+  constructor(private pizzaService: PizzaService) { }
+
+  // Test de données mock
+  // getPizza() {
+  //   return this.data;
+  // }
 
   getPizza() {
-    return this.data;
+    this.pizzaService.getAllPizza().subscribe(
+      res => {
+        this.datas = res;
+        console.log(this.datas);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   getCart() {
@@ -41,6 +57,7 @@ export class CartService {
 
   addPizza(pizza) {
     let added = false;
+    // tslint:disable-next-line: prefer-const
     for (let p of this.cart) {
       if (p.id === pizza.id) {
         p.amount += 1;
@@ -49,12 +66,14 @@ export class CartService {
       }
     }
     if (!added) {
+      pizza.amount = 1;
       this.cart.push(pizza);
     }
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
 
   decreasePizza(pizza) {
+    // tslint:disable-next-line: prefer-const
     for (let [index, p] of this.cart.entries()) {
       if (p.id === pizza.id) {
         p.amount -= 1;
@@ -67,6 +86,7 @@ export class CartService {
   }
 
   removePizza(pizza) {
+    // tslint:disable-next-line: prefer-const
     for (let [index, p] of this.cart.entries()) {
       if (p.id === pizza.id) {
         this.cartItemCount.next(this.cartItemCount.value - p.amount);
