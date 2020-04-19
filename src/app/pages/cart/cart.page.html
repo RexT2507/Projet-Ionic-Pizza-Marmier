@@ -1,9 +1,24 @@
-<ion-header>
+<ion-header [translucent]="true">
+
   <ion-toolbar>
-    <ion-title>cart</ion-title>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
+    <ion-title>Votre panier</ion-title>
+
+    <ion-icon name="return-down-back-sharp" routerLink="" routerDirection="root"></ion-icon>
+
   </ion-toolbar>
+
 </ion-header>
 
-<ion-content>
+<ion-content  [fullscreen]="true">
+
+  
+
+
+  <app-footer></app-footer>
 
 </ion-content>
