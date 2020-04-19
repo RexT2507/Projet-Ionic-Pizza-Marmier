@@ -10,7 +10,7 @@
       Jurassic Pizza
     </ion-title>
 
-    <a class="home-icon"  routerLink="/cart"><ion-icon name="cart-sharp"></ion-icon></a>
+    <a class="home-icon" (click)="openCart()"><ion-icon name="cart-sharp"></ion-icon></a>
     <a class="home-icon"><ion-icon name="remove-sharp"></ion-icon></a>
     <a class="home-icon">
       <ion-badge id="cart-badge" color="success" *ngIf="(cartItemCount | async)?.valueOf() > 0">{{cartItemCount | async}}</ion-badge>
@@ -30,11 +30,11 @@
     </div>
 
     <div class="card-body">
-
+      <img src="{{p.photo}}">
     </div>
 
     <div class="card-body">
-      {{p.prix}}
+      Prix : {{p.prix }} €
       <br>
       <button class="btn mt-2" routerLink="/pizza-detail">Détails</button>
       &nbsp;

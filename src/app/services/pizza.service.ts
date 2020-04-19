@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PizzaService {
 
-  private pizzaUrl = 'https://ynov-m1m2.jcatania.io/pizza';
+  private pizzaUrl = 'https://api.ynov.jcatania.io/pizza';
 
   constructor(private http: HttpClient) { }
 
