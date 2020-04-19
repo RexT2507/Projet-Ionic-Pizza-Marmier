@@ -10,10 +10,10 @@
       Jurassic Pizza
     </ion-title>
 
-    <a class="home-icon"  routerLink=""><ion-icon name="cart-sharp"></ion-icon></a>
+    <a class="home-icon"  routerLink="/cart"><ion-icon name="cart-sharp"></ion-icon></a>
     <a class="home-icon"><ion-icon name="remove-sharp"></ion-icon></a>
-    <a class="home-icon" routerLink="">
-      <ion-badge id="cart-badge" color="success">2</ion-badge>
+    <a class="home-icon">
+      <ion-badge id="cart-badge" color="success" *ngIf="(cartItemCount | async)?.valueOf() > 0">{{cartItemCount | async}}</ion-badge>
       <ion-icon name="build-sharp"></ion-icon>
     </a>
   
@@ -21,22 +21,29 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="pizza">
 
-  <div class="card">
+  <div class="card" *ngFor="let p of pizza">
 
     <div class="card-header text-center">
-      Titre de la pizza
+      {{p.nom}}
     </div>
 
     <div class="card-body">
-      Contenu de la pizza
-      <button class="btn mt-2">Commander</button>
-      &nbsp;
+
+    </div>
+
+    <div class="card-body">
+      {{p.prix}}
+      <br>
       <button class="btn mt-2" routerLink="/pizza-detail">Détails</button>
+      &nbsp;
+      <button class="btn mt-2" (click)="addToCart(p)">Commander</button>
     </div>
 
   </div>
+
+  <br><br>
 
   <app-footer></app-footer>
 

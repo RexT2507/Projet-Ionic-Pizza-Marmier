@@ -6,12 +6,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { CartPage } from './cart.page';
 import { RouterModule } from '@angular/router';
+import { FooterComponentModule } from 'src/app/components/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    FooterComponentModule,
     RouterModule.forChild([
       {
         path: '',
