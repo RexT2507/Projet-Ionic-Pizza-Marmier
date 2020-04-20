@@ -11,3 +11,38 @@ ion-title
   font-size: 18px;
   padding-top: 5px;
 }
+
+.cart-change
+{
+  padding-right: 15px;
+}
+
+.amount
+{
+  padding-left: 13px;
+}
+
+.decrease
+{
+  padding-right: 2px;
+}
+
+.warning 
+{
+  background-color: #ff0;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+}
+
+.warning img 
+{
+  width: 100%;
+}
+
+.warning p 
+{
+  font: small-caps bold 1.2rem sans-serif;
+  text-align: center;
+}
