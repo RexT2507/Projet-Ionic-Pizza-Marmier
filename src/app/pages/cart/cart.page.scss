@@ -46,3 +46,16 @@ ion-title
   font: small-caps bold 1.2rem sans-serif;
   text-align: center;
 }
+
+.btn
+{
+  color: white;
+  font-weight: bold;
+  background-color: #CED02D;
+}
+.btn:hover
+{
+  color: white;
+  background-color: #e23123;
+  border-color: #CED02D;
+}

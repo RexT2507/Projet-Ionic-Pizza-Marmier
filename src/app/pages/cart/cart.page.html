@@ -18,7 +18,7 @@
 
 <ion-content fullscreen>
 
-  <div class="ion-padding">
+  <div class="ion-padding" *ngIf="cart">
     
     <ion-list>
 
@@ -107,9 +107,9 @@
 
     </ion-list>
  
-    <ion-button expand="full" (click)="checkout()" *ngIf="getTotal() != 0">
-      Checkout
-    </ion-button>
+    <button class="btn" expand="full" (click)="checkout(cart[0])" *ngIf="getTotal() != 0">
+      Passer commande
+    </button>
     
     <ng-template #emptyCart>
 
