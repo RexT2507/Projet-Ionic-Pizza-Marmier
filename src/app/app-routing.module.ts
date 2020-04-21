@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'pizza-detail',
+    path: 'home/pizza-detail/:id',
     loadChildren: () => import('./pages/pizza-detail/pizza-detail.module').then( m => m.PizzaDetailPageModule)
   },
   {

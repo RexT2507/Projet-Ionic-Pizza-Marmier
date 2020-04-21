@@ -18,19 +18,41 @@
 
 <ion-content  [fullscreen]="true">
 
-  <ion-card class="mt-5">
+  <ion-card class="mt-5 mb-5">
 
-    <img src="../../../assets/jurassic-park.jpg">
+    <img src="{{pizza.photo}}">
 
     <ion-card-header>
-      <ion-card-title>Titre de la pizza</ion-card-title>
+      <ion-card-title>Nom : {{pizza.nom}}</ion-card-title>
     </ion-card-header>
 
+    <ion-card-content class="pt-3">
+      <table class="table text-center">
+        <thead *ngIf="ingredient.length > 1; else oneIngredient">
+          <tr>
+            <th scope="col" class="table-header">Ingrédients</th>
+          </tr>
+        </thead>
+        <ng-template #oneIngredient>
+          <tr>
+            <th scope="col" class="table-header">Ingrédient</th>
+          </tr>
+        </ng-template>
+        <tbody class="table-body">
+          <tr *ngFor="let i of ingredient">
+            <td>{{i.nom}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-card-content>
+
     <ion-card-content>
-      <p>Contenu de la pizza</p>
+      <h2>Prix : {{pizza.prix}}€</h2>
     </ion-card-content>
 
   </ion-card>
+
+  <br><br>
 
   <app-footer></app-footer>
 

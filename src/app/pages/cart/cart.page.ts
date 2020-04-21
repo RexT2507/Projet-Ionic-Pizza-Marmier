@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pizza, CartService } from 'src/app/services/cart.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController  } from '@ionic/angular';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +11,7 @@ export class CartPage implements OnInit {
 
   cart: Pizza[] = [];
 
-  constructor(private cartService: CartService, private modalCtrl: ModalController) { }
+  constructor(private cartService: CartService, private modalCtrl: ModalController, private alertCtrl: AlertController) { }
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
@@ -37,8 +37,16 @@ export class CartPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  checkout() {
-    
+  async checkout(pizza) {
+    const alert = await this.alertCtrl.create({
+      header: 'Merci pour votre achat',
+      message: 'Votre commande sera délivré le plus tôt possible',
+      buttons: ['OK']
+    });
+    alert.present().then(() => {
+      this.modalCtrl.dismiss();
+      this.removeCartItem(pizza);
+    });
   }
 
 }

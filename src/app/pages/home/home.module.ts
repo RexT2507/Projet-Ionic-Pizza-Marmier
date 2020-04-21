@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { FooterComponentModule } from 'src/app/components/footer/footer.module';
+import { PizzaDetailPage } from '../pizza-detail/pizza-detail.page';
 
 @NgModule({
   imports: [

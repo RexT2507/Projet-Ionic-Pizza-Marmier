@@ -34,9 +34,9 @@
     </div>
 
     <div class="card-body">
-      Prix : {{p.prix }} €
+      Prix : {{p.prix}} €
       <br>
-      <button class="btn mt-2" routerLink="/pizza-detail">Détails</button>
+      <button class="btn mt-2" [routerLink]="['./pizza-detail', p.id]">Détails</button>
       &nbsp;
       <button class="btn mt-2" (click)="addToCart(p)">Commander</button>
     </div>
