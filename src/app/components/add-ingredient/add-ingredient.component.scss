@@ -1,0 +1,58 @@
+.card 
+{
+  margin: 0 auto;
+  float: none;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 295px;
+  background-color: rgba(0,0,0,.03);
+
+  .card-header
+  {
+    background-color: #e23123;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn
+  {
+    color: white;
+    font-weight: bold;
+    background-color: #CED02D;
+  }
+  .btn:hover
+  {
+    color: white;
+    background-color: #e23123;
+    border-color: #CED02D;
+  }
+
+}
+
+.table-header
+{
+    color: white;
+    background-color: #e23123;
+    font-size: 18px;
+    border-radius: .25rem;
+}
+
+.table-body
+{
+    color: white;
+    background-color: #d4d642;
+    border-radius: .25rem;
+}
+
+.text-left
+{
+    float: left;  
+}
+
+.icon-right
+{
+    font-size: 25px;
+    float: right;
+}

@@ -1,3 +1,86 @@
-<p>
-  add-ingredient works!
-</p>
+
+<div class="card">
+
+  <div class="card-header text-center">
+    Maintenance ingrédient
+  </div>
+
+  <div class="card-body">
+    <button type="submit" class="btn" (click)="hide()">Ajouter un ingrédient</button>
+  </div>
+
+  <div class="card-body" style="display: none" id="addIng">
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+
+        <label>Nom :</label>
+
+        <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
+
+        <div *ngIf="submitted && f.nom.errors">
+          Le nom est requis
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn">Enregister</button>
+
+    </form>
+    
+  </div>
+
+  <div class="card-body">
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col" class="table-header">
+            <div class="text-left">
+              Liste des ingrédients
+            </div>
+            <div class="icon-right" *ngIf="!tbodyLife; else hideList">
+              <a (click)="hiden()">
+                <ion-icon name="remove-outline"></ion-icon>
+              </a>
+            </div>
+            <ng-template #hideList>
+              <div class="icon-right">
+                <a (click)="hiden()">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+              </div>
+            </ng-template>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="table-body" id="tbody" style="display: none">
+        <tr *ngFor="let i of ingredient">
+          <td>
+            <div class="text-left">
+              {{i.nom}}
+            </div>
+            <div class="icon-right">
+              <a (click)="updateIngredient(i)">
+                <ion-icon name="create-outline"></ion-icon>
+              </a>
+              &nbsp;
+              <a (click)="deleteIngredient(i)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </a>
+            </div>
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<br><br>

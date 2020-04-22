@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'admin-profil',
     loadChildren: () => import('./pages/admin-profil/admin-profil.module').then( m => m.AdminProfilPageModule)
+  },  {
+    path: 'edit-ingredient',
+    loadChildren: () => import('./pages/admin-profil/edit-ingredient/edit-ingredient.module').then( m => m.EditIngredientPageModule)
   },
+
 
 
 ];

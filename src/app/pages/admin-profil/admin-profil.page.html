@@ -21,16 +21,18 @@
   <div class="card">
 
     <div class="card-header text-center">
-      Ajouter une pizza ou ingrédient
+      Maintenance des produits
     </div>
 
     <div class="card-body">
-      <button class="btn mt-2" [routerLink]="['/admin-profil/add-pizza']">Nouvelle Pizza</button>
+      <button class="btn mt-2" [routerLink]="['/admin-profil/add-pizza']">Pizza</button>
       &nbsp;
-      <button class="btn mt-2" [routerLink]="['/admin-profil/add-ingredient']">Nouvel ingrédient</button>
+      <button class="btn mt-2" [routerLink]="['/admin-profil/add-ingredient']">Ingrédient</button>
     </div>
 
   </div>
+
+  <router-outlet></router-outlet>
 
   <app-footer></app-footer>
 

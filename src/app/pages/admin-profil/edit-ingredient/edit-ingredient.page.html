@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
+    <ion-title>
+      Editer un ingrédient
+    </ion-title>
+
+    <ion-icon name="return-down-back-sharp" routerLink="" routerDirection="root"></ion-icon>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="card">
+
+    <div class="card-header">
+      Edition
+    </div>
+
+    <div class="card-body">
+
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+  
+          <label>Nom :</label>
+  
+          <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
+  
+          <div *ngIf="submitted && f.nom.errors">
+            Le nom est requis
+          </div>
+  
+        </div>
+  
+        <button type="submit" class="btn">Enregister</button>
+  
+      </form>
+      
+    </div>
+
+  </div>
+
+  <app-footer></app-footer>
+
+</ion-content>
