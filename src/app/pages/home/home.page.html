@@ -21,7 +21,7 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="pizza">
+<ion-content [fullscreen]="true" *ngIf="pizza; else wait">
 
   <div class="card" *ngFor="let p of pizza">
 
@@ -42,6 +42,14 @@
     </div>
 
   </div>
+
+  <ng-template #wait>
+    <div class="card">
+
+      <img style="height: 290px;" src="../../../assets/wait.gif">
+  
+    </div>
+  </ng-template>
 
   <br><br>
 
