@@ -10,15 +10,28 @@ import { IngredientService } from 'src/app/services/ingredient.service';
 })
 export class AddIngredientComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private ingredientService: IngredientService) { }
-
   addForm: FormGroup;
   submitted = false;
 
+  ingredient: any = [];
+
+  tbodyLife = true;
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private ingredientService: IngredientService) { }
+
   ngOnInit() {
+    this.getIngredient();
     this.addForm = this.formBuilder.group({
       id: [],
       nom: ['', Validators.required]
+    });
+  }
+
+  getIngredient(): void {
+    this.ingredientService.getAllIngredient()
+    .subscribe(res => {
+      this.ingredient = res;
+      console.log(res);
     });
   }
 
@@ -28,14 +41,51 @@ export class AddIngredientComponent implements OnInit {
       this.ingredientService.addIngredient(this.addForm.value)
         .subscribe( data => {
           console.log(data);
-          this.router.navigate(['home']).then(() => {
+          this.router.navigate(['/admin-profil/add-ingredient']).then(() => {
             window.location.reload();
           });
         });
     }
   }
 
+  deleteIngredient(i: any) {
+    this.ingredientService.deleteIngredient(i.id).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['/admin-profil/add-ingredient']).then(() => {
+          window.location.reload();
+        });
+      }
+    );
+  }
+
+  updateIngredient(i: any) {
+    localStorage.removeItem('ingredientId');
+    localStorage.setItem('ingredientId', i.id);
+    this.router.navigate(['edit-ingredient']);
+  }
+
   get f() {
     return this.addForm.controls;
+  }
+
+  hide() {
+    const x = document.getElementById('addIng');
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
+
+  hiden() {
+    const x = document.getElementById('tbody');
+    if (x.style.display === 'none') {
+      x.removeAttribute('style');
+      this.tbodyLife = false;
+    } else {
+      x.style.display = 'none';
+      this.tbodyLife = true;
+    }
   }
 }

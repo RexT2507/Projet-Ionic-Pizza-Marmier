@@ -23,7 +23,7 @@ export class IngredientService {
   }
 
   updateIngredient(ingredient: any) {
-    return this.http.put(`${this.ingredientUrl}/${ingredient._id}`, ingredient);
+    return this.http.put(`${this.ingredientUrl}/${ingredient.id}`, ingredient);
   }
 
   deleteIngredient(id: string) {
