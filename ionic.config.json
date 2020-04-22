@@ -1,5 +1,7 @@
 {
   "name": "Projet-Ionic-Pizza-Marmier",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
