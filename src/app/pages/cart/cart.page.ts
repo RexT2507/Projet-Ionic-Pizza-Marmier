@@ -37,7 +37,7 @@ export class CartPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  async checkout(pizza) {
+  async checkout(cartFull) {
     const alert = await this.alertCtrl.create({
       header: 'Merci pour votre achat',
       message: 'Votre commande sera délivré le plus tôt possible',
@@ -45,7 +45,10 @@ export class CartPage implements OnInit {
     });
     alert.present().then(() => {
       this.modalCtrl.dismiss();
-      this.removeCartItem(pizza);
+      const i = 0;
+      while (i !== cartFull.length) {
+        this.removeCartItem(cartFull[i]);
+      }
     });
   }
 

@@ -14,7 +14,7 @@
     <a class="home-icon"><ion-icon name="remove-sharp"></ion-icon></a>
     <a class="home-icon">
       <ion-badge id="cart-badge" color="success" *ngIf="(cartItemCount | async)?.valueOf() > 0">{{cartItemCount | async}}</ion-badge>
-      <ion-icon name="build-sharp"></ion-icon>
+      <ion-icon name="build-sharp" routerLink="/admin-profil"></ion-icon>
     </a>
   
   </ion-toolbar>

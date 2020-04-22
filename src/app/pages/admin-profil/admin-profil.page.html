@@ -1,9 +1,37 @@
-<ion-header>
+<ion-header [translucent]="true">
+
   <ion-toolbar>
-    <ion-title>admin-profil</ion-title>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
+    <ion-title>
+      Page administrateur
+    </ion-title>
+
+    <ion-icon name="return-down-back-sharp" routerLink="" routerDirection="root"></ion-icon>
+
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+
+  <div class="card">
+
+    <div class="card-header text-center">
+      Ajouter une pizza ou ingrédient
+    </div>
+
+    <div class="card-body">
+      <button class="btn mt-2" [routerLink]="['/admin-profil/add-pizza']">Nouvelle Pizza</button>
+      &nbsp;
+      <button class="btn mt-2" [routerLink]="['/admin-profil/add-ingredient']">Nouvel ingrédient</button>
+    </div>
+
+  </div>
+
+  <app-footer></app-footer>
 
 </ion-content>
