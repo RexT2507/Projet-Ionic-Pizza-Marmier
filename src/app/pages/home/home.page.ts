@@ -27,9 +27,10 @@ export class HomePage implements OnInit {
   getPizza(): void {
     this.pizzaService.getAllPizza().subscribe(
       res => {
+        console.log(res);
         this.pizza = res;
         // Teste affichage des pizza
-        // console.log(`Les pizza : ${this.pizza}`);
+        console.log(this.pizza);
       }
     );
   }

@@ -31,7 +31,7 @@ export class AddIngredientComponent implements OnInit {
     this.ingredientService.getAllIngredient()
     .subscribe(res => {
       this.ingredient = res;
-      console.log(res);
+      // console.log(res);
     });
   }
 
@@ -65,9 +65,7 @@ export class AddIngredientComponent implements OnInit {
     this.router.navigate(['edit-ingredient']);
   }
 
-  get f() {
-    return this.addForm.controls;
-  }
+
 
   hide() {
     const x = document.getElementById('addIng');

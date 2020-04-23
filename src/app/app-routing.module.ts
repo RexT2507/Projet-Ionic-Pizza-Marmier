@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'edit-ingredient',
     loadChildren: () => import('./pages/admin-profil/edit-ingredient/edit-ingredient.module').then( m => m.EditIngredientPageModule)
   },
+  {
+    path: 'edit-pizza',
+    loadChildren: () => import('./pages/admin-profil/edit-pizza/edit-pizza.module').then( m => m.EditPizzaPageModule)
+  },
 
 
 

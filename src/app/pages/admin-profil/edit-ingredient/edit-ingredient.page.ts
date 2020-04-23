@@ -21,8 +21,6 @@ export class EditIngredientPage implements OnInit {
   ngOnInit() {
     const ingredientId = localStorage.getItem('ingredientId');
 
-    console.log(ingredientId);
-
     if (!ingredientId) {
       alert('Il y a un problème');
       this.router.navigate(['/admin-profil/add-ingredient']);
@@ -35,9 +33,9 @@ export class EditIngredientPage implements OnInit {
     });
 
     this.ingredientService.getIngredientById(ingredientId).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.editForm.patchValue(data);
-      console.log(ingredientId);
+      // console.log(ingredientId);
     });
   }
 
@@ -51,7 +49,7 @@ export class EditIngredientPage implements OnInit {
       this.ingredientService.updateIngredient(this.editForm.value)
         .subscribe(
           data => {
-            console.log(data);
+            // console.log(data);
             this.router.navigate(['/admin-profil/add-ingredient']).then(() => {
               window.location.reload();
           },
