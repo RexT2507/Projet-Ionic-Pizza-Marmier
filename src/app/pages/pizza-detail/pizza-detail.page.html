@@ -40,14 +40,14 @@
         </ng-template>
         <tbody class="table-body">
           <tr *ngFor="let i of ingredient">
-            <td>{{i.nom}}</td>
+            <td>{{i?.nom}}</td>
           </tr>
         </tbody>
       </table>
     </ion-card-content>
 
     <ion-card-content>
-      <h2>Prix : {{pizza.prix}}€</h2>
+      <h2>Prix : {{pizza.prix}} €</h2>
     </ion-card-content>
 
   </ion-card>

@@ -35,7 +35,7 @@ export class PizzaDetailPage implements OnInit {
           this.ingredientService.getIngredientById(this.pizza.ingredients[i]).subscribe(
             ingData => {
               this.ingredient[i] = ingData;
-              console.log(this.ingredient[i]);
+              // console.log(this.ingredient[i]);
             },
             error => console.log(error)
           );

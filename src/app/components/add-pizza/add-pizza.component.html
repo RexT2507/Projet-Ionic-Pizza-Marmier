@@ -1,11 +1,127 @@
 <div class="card">
 
   <div class="card-header">
-    Nouvelle pizza
+    Maintenance pizza
   </div>
 
   <div class="card-body">
-    
+    <button type="submit" class="btn" (click)="hide()">Ajouter une pizza</button>
+  </div>
+
+  <div class="card-body" style="display: none" id="addPizza">
+
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+
+        <label>Nom :</label>
+
+        <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
+
+        <div *ngIf="submitted && f.nom.errors">
+          Le nom est requis
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Photo :</label>
+
+        <ion-button (click)="openCam()" color="primary">Prendre une photo</ion-button>
+
+        <div *ngIf="image">
+          <img src="{{image}}">
+        </div>
+
+        <!-- <input type="file" class="inputfile" formControlName="photo" [ngClass]="{'is-invalid': submitted && f.photo.errors}"> -->
+
+        <!-- <div *ngIf="submitted && f.photo.errors">
+          La photo est requise
+        </div> -->
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Ingrédient :</label>
+
+        <input type="text" formControlName="ingredient"  placeholder="Ingrédient" class="form-control" [ngClass]="{'is-invalid': submitted && f.ingredient.errors}">
+
+        <div *ngIf="submitted && f.ingredient.errors">
+          Les ingredients sont requis
+        </div>
+
+      </div>
+      
+      <div class="form-group">
+
+        <label>Prix :</label>
+
+        <input type="text" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
+
+        <div *ngIf="submitted && f.prix.errors">
+          Le prix est requis
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn">Enregister</button>
+
+    </form>
+
+  </div>
+
+  <div class="card-body">
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col" class="table-header">
+            <div class="text-left">
+              Liste des pizza
+            </div>
+            <div class="icon-right" *ngIf="!tbodyLife; else hideList">
+              <a (click)="hiden()">
+                <ion-icon name="remove-outline"></ion-icon>
+              </a>
+            </div>
+            <ng-template #hideList>
+              <div class="icon-right">
+                <a (click)="hiden()">
+                  <ion-icon name="add-outline"></ion-icon>
+                </a>
+              </div>
+            </ng-template>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="table-body" id="tbody" style="display: none">
+        <tr *ngFor="let p of pizza">
+          <td>
+            <div class="text-left">
+              {{p.nom}}
+            </div>
+            <div class="icon-right">
+              <!-- <a (click)="updatePizza(p)">
+                <ion-icon name="create-outline"></ion-icon>
+              </a> -->
+              &nbsp;
+              <a (click)="deletePizza(p)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </a>
+            </div>
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
   </div>
 
 </div>
+
+<br><br>

@@ -23,7 +23,7 @@ export class PizzaService {
   }
 
   updatePizza(pizza: any) {
-    return this.http.put(`${this.pizzaUrl}/${pizza._id}`, pizza);
+    return this.http.put(`${this.pizzaUrl}/${pizza.id}`, pizza);
   }
 
   deletePizza(id: string) {
