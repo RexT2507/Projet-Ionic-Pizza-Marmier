@@ -62,3 +62,25 @@ ion-title
   }
 
 }
+
+.card-body-load 
+{
+  margin: 0 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+.loader {
+  border: 10px solid #CED02D; /* Light grey */
+  border-top: 10px solid #e23123; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

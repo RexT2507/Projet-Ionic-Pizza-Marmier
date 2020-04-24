@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CartPage } from './cart.page';
 
@@ -10,7 +11,10 @@ describe('CartPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CartPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        HttpClientModule,
+        IonicModule.forRoot()
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CartPage);

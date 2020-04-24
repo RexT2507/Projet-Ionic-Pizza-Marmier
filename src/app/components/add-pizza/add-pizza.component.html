@@ -18,7 +18,7 @@
 
         <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
 
-        <div *ngIf="submitted && f.nom.errors">
+        <div *ngIf="submitted && f.nom.errors" class="card-error">
           Le nom est requis
         </div>
 
@@ -48,7 +48,7 @@
 
         <input type="text" formControlName="ingredient"  placeholder="Ingrédient" class="form-control" [ngClass]="{'is-invalid': submitted && f.ingredient.errors}">
 
-        <div *ngIf="submitted && f.ingredient.errors">
+        <div *ngIf="submitted && f.ingredient.errors" class="card-error">
           Les ingredients sont requis
         </div>
 
@@ -60,7 +60,7 @@
 
         <input type="text" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
 
-        <div *ngIf="submitted && f.prix.errors">
+        <div *ngIf="submitted && f.prix.errors" class="card-error">
           Le prix est requis
         </div>
 
@@ -105,9 +105,9 @@
               {{p.nom}}
             </div>
             <div class="icon-right">
-              <!-- <a (click)="updatePizza(p)">
+              <a (click)="updatePizza(p)">
                 <ion-icon name="create-outline"></ion-icon>
-              </a> -->
+              </a>
               &nbsp;
               <a (click)="deletePizza(p)">
                 <ion-icon name="trash-outline"></ion-icon>
