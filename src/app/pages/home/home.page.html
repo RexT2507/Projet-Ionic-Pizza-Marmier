@@ -21,34 +21,51 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true" *ngIf="pizza; else wait">
+<ion-content [fullscreen]="true">
 
-  <div class="card" *ngFor="let p of pizza">
+  <div *ngIf="pizza; else wait">
 
-    <div class="card-header text-center">
-      {{p.nom}}
-    </div>
+    <div class="card" *ngFor="let p of pizza">
 
-    <div class="card-body">
-      <img src="{{p.photo}}">
-    </div>
-
-    <div class="card-body">
-      Prix : {{p.prix}} €
-      <br>
-      <button class="btn mt-2" [routerLink]="['./pizza-detail', p.id]">Détails</button>
-      &nbsp;
-      <button class="btn mt-2" (click)="addToCart(p)">Commander</button>
+      <div class="card-header text-center">
+        {{p.nom}}
+      </div>
+  
+      <div class="card-body">
+        <img src="{{p.photo}}">
+      </div>
+  
+      <div class="card-body">
+        Prix : {{p.prix}} €
+        <br>
+        <button class="btn mt-2" [routerLink]="['./pizza-detail', p.id]">Détails</button>
+        &nbsp;
+        <button class="btn mt-2" (click)="addToCart(p)">Commander</button>
+      </div>
+  
     </div>
 
   </div>
 
   <ng-template #wait>
+
     <div class="card">
 
-      <img style="height: 290px;" src="../../../assets/wait.gif">
+      <div class="card-header text-center">
+        Chargement patientez
+      </div>
+
+      <div class="card-body">
+        <img style="height: 290px;" src="../../../assets/wait.gif">
+      </div>
+
+      <div class="card-body-load">
+        <div class="loader"></div>
+      </div>
+
   
     </div>
+
   </ng-template>
 
   <br><br>

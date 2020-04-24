@@ -49,7 +49,7 @@ export class AddPizzaComponent implements OnInit {
 
     this.camera.getPicture(options).then((imageData) => {
       this.addForm.controls.photo.setValue(`data:image/jpeg;base64,${imageData}`);
-      this.image = (window as any).Ionic.WebView.convertFileSrc(imageData);
+      this.image = this.addForm.controls.photo.setValue(`data:image/jpeg;base64,${imageData}`);
     }, (err) => {
       alert('Error' + JSON.stringify(err));
     });
@@ -90,7 +90,7 @@ export class AddPizzaComponent implements OnInit {
   updatePizza(p: any) {
     localStorage.removeItem('pizzaId');
     localStorage.setItem('pizzaId', p.id);
-    this.router.navigate(['']);
+    this.router.navigate(['edit-pizza']);
   }
 
   get f() {

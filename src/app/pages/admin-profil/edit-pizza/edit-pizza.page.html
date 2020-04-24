@@ -1,9 +1,98 @@
-<ion-header>
+<ion-header [translucent]="true">
+
   <ion-toolbar>
-    <ion-title>edit-pizza</ion-title>
+
+    <ion-buttons slot="start">
+      <img src="../../../assets/jp-logo.png" style="width: 55px;">
+    </ion-buttons>
+
+    <ion-title>
+      Editer une pizza
+    </ion-title>
+
+    <ion-icon name="return-down-back-sharp" routerLink="" routerDirection="root"></ion-icon>
+
   </ion-toolbar>
+
 </ion-header>
 
+
 <ion-content>
+
+  <div class="card">
+
+    <div class="card-header">
+      Edition
+    </div>
+
+    <div class="card-body" *ngIf="pizza">
+
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+  
+          <label>Nom :</label>
+  
+          <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
+  
+          <div *ngIf="submitted && f.nom.errors" class="card-error">
+            Le nom est requis
+          </div>
+  
+        </div>
+  
+        <div class="form-group">
+  
+          <label>Photo :</label>
+  
+          <div>
+            <img src="{{pizza.photo}}">
+          </div>
+  
+          <!-- <input type="file" class="inputfile" formControlName="photo" [ngClass]="{'is-invalid': submitted && f.photo.errors}"> -->
+  
+          <!-- <div *ngIf="submitted && f.photo.errors">
+            La photo est requise
+          </div> -->
+
+          <button (click)="openCam()" class="btn mt-2">Changer la photo</button>
+  
+        </div>
+  
+        <div class="form-group">
+  
+          <label>Ingrédient :</label>
+  
+          <!-- <input type="text" formControlName="ingredient"  placeholder="Ingrédient" class="form-control" [ngClass]="{'is-invalid': submitted && f.ingredient.errors}">
+  
+          <div *ngIf="submitted && f.ingredient.errors">
+            Les ingredients sont requis
+          </div> -->
+  
+        </div>
+        
+        <div class="form-group">
+  
+          <label>Prix :</label>
+  
+          <input type="text" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
+  
+          <div *ngIf="submitted && f.prix.errors" class="card-error">
+            Le prix est requis
+          </div>
+  
+        </div>
+  
+        <button type="submit" class="btn">Enregister</button>
+  
+      </form>
+      
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <app-footer></app-footer>
 
 </ion-content>

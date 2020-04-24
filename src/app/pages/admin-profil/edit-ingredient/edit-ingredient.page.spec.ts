@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { EditIngredientPage } from './edit-ingredient.page';
+import { FormsModule } from '@angular/forms';
 
 describe('EditIngredientPage', () => {
   let component: EditIngredientPage;
@@ -10,7 +11,10 @@ describe('EditIngredientPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditIngredientPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        FormsModule,
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EditIngredientPage);

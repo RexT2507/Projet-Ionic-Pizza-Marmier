@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PizzaService } from 'src/app/services/pizza.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-edit-pizza',
@@ -15,8 +16,9 @@ export class EditPizzaPage implements OnInit {
   editForm: FormGroup;
 
   submitted = false;
+  image: any;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private pizzaService: PizzaService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private pizzaService: PizzaService, private camera: Camera) { }
 
   ngOnInit() {
     const pizzaId = localStorage.getItem('pizzaId');
@@ -39,6 +41,7 @@ export class EditPizzaPage implements OnInit {
       data => {
         console.log(data);
         this.editForm.patchValue(data);
+        this.pizza = data;
       }
     );
   }
@@ -63,6 +66,23 @@ export class EditPizzaPage implements OnInit {
         }
       );
     }
+  }
+
+  openCam() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true
+    };
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.editForm.controls.photo.setValue(`data:image/jpeg;base64,${imageData}`);
+      this.image = this.editForm.controls.photo.setValue(`data:image/jpeg;base64,${imageData}`);
+    }, (err) => {
+      alert('Error' + JSON.stringify(err));
+    });
   }
 
 }

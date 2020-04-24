@@ -65,6 +65,9 @@ export class AddIngredientComponent implements OnInit {
     this.router.navigate(['edit-ingredient']);
   }
 
+  get f() {
+    return this.addForm.controls;
+  }
 
 
   hide() {

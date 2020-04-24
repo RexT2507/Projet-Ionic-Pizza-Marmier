@@ -34,7 +34,7 @@
   
           <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{'is-invalid': submitted && f.nom.errors}">
   
-          <div *ngIf="submitted && f.nom.errors">
+          <div *ngIf="submitted && f.nom.errors" class="card-error">
             Le nom est requis
           </div>
   
