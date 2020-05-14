@@ -1,3 +1,5 @@
+![Ionic CI](https://github.com/RexT2507/Projet-Ionic-Pizza-Marmier/workflows/Ionic%20CI/badge.svg?branch=master)
+
 # Projet-Ionic-Pizza-Marmier
 Projet Ionic 4 d'une pizzeria pour Ynov par Baptiste Marmier Master 1
 
