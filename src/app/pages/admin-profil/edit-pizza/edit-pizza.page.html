@@ -25,7 +25,7 @@
       Edition
     </div>
 
-    <div class="card-body" *ngIf="pizza">
+    <div class="card-body" *ngIf="pizza; else chargement">
 
       <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
 
@@ -88,6 +88,26 @@
       </form>
       
     </div>
+
+    <ng-template #chargement>
+
+      <div class="card">
+
+        <div class="card-header text-center">
+          Chargement patientez
+        </div>
+  
+        <div class="card-body">
+          <img style="height: 290px;" src="../../../assets/wait.gif">
+        </div>
+  
+        <div class="card-body-load">
+          <div class="loader"></div>
+        </div>
+    
+      </div>
+
+    </ng-template>
 
   </div>
 

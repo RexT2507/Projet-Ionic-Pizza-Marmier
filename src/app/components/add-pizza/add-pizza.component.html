@@ -46,7 +46,45 @@
 
         <label>Ingrédient :</label>
 
-        <input type="text" formControlName="ingredient"  placeholder="Ingrédient" class="form-control" [ngClass]="{'is-invalid': submitted && f.ingredient.errors}">
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th scope="col" class="table-header">
+                <div class="text-left">
+                  Liste des ingrédients
+                </div>
+                <div class="icon-right" *ngIf="!tbodyLifeIng; else hideListIngredient">
+                  <a (click)="hidenIngredient()">
+                    <ion-icon name="remove-outline"></ion-icon>
+                  </a>
+                </div>
+                <ng-template #hideListIngredient>
+                  <div class="icon-right">
+                    <a (click)="hidenIngredient()">
+                      <ion-icon name="add-outline"></ion-icon>
+                    </a>
+                  </div>
+                </ng-template>
+              </th>
+            </tr>
+          </thead>
+    
+          <tbody class="table-body" id="tbodyIn" style="display: none">
+            <tr *ngFor="let i of ingredient">
+              <td>
+                <div class="text-left">
+                  {{i.nom}}
+                </div>
+                <div class="icon-right">
+                  <ion-checkbox color="danger"></ion-checkbox>
+                </div>
+              </td>
+    
+            </tr>
+          </tbody>
+    
+        </table>
 
         <div *ngIf="submitted && f.ingredient.errors" class="card-error">
           Les ingredients sont requis

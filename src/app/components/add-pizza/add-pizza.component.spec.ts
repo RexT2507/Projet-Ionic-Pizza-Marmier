@@ -5,6 +5,9 @@ import { AddPizzaComponent } from './add-pizza.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { Camera } from '@ionic-native/camera/ngx';
+import { HttpClientModule } from '@angular/common/http';
+
 describe('AddPizzaComponent', () => {
   let component: AddPizzaComponent;
   let fixture: ComponentFixture<AddPizzaComponent>;
@@ -16,7 +19,11 @@ describe('AddPizzaComponent', () => {
         IonicModule.forRoot(),
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         RouterTestingModule.withRoutes([])
+      ],
+      providers: [
+        Camera,
       ]
     }).compileComponents();
 
