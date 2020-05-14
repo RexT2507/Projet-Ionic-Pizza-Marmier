@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PizzaService } from 'src/app/services/pizza.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { IngredientService } from 'src/app/services/ingredient.service';
 
 @Component({
   selector: 'app-add-pizza',
@@ -19,16 +20,23 @@ export class AddPizzaComponent implements OnInit {
 
   tbodyLife = true;
 
+  tbodyLifeIng = true;
+
+  ingredient: any = [];
+
   image: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private camera: Camera,
-    private pizzaService: PizzaService) { }
+    private pizzaService: PizzaService,
+    private ingredientService: IngredientService
+  ) { }
 
   ngOnInit() {
     this.getPizza();
+    this.getIngredient();
     this.addForm = this.formBuilder.group({
       id: [],
       photo: ['', Validators.required],
@@ -60,6 +68,14 @@ export class AddPizzaComponent implements OnInit {
     .subscribe(res => {
       this.pizza = res;
       console.log(this.pizza);
+    });
+  }
+
+  getIngredient(): void {
+    this.ingredientService.getAllIngredient()
+    .subscribe(res => {
+      this.ingredient = res;
+      // console.log(res);
     });
   }
 
@@ -114,6 +130,17 @@ export class AddPizzaComponent implements OnInit {
     } else {
       x.style.display = 'none';
       this.tbodyLife = true;
+    }
+  }
+
+  hidenIngredient() {
+    const x = document.getElementById('tbodyIn');
+    if (x.style.display === 'none') {
+      x.removeAttribute('style');
+      this.tbodyLifeIng = false;
+    } else {
+      x.style.display = 'none';
+      this.tbodyLifeIng = true;
     }
   }
 }

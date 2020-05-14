@@ -22,7 +22,6 @@ import { AddIngredientComponentModule } from 'src/app/components/add-ingredient/
     FooterComponentModule,
     AddPizzaComponentModule,
     AddIngredientComponentModule,
-    FooterComponentModule,
     RouterModule.forChild([
       {
         path: '',

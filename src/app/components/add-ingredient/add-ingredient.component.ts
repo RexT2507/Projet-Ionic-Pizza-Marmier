@@ -17,7 +17,11 @@ export class AddIngredientComponent implements OnInit {
 
   tbodyLife = true;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private ingredientService: IngredientService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private ingredientService: IngredientService
+  ) { }
 
   ngOnInit() {
     this.getIngredient();
