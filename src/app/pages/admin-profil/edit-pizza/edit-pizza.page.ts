@@ -45,10 +45,10 @@ export class EditPizzaPage implements OnInit {
 
     this.editForm = this.formBuilder.group({
       id: [],
-      photo: ['', Validators.required],
+      photo: ['' ],
       nom: ['', Validators.required],
       ingredients: [ [] ],
-      prix: ['', Validators.required]
+      prix: [ , Validators.required]
     });
 
     this.pizzaService.getPizzaById(pizzaId).subscribe(
@@ -82,8 +82,10 @@ export class EditPizzaPage implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log(this.editForm.value);
+    console.log(this.editForm.valid);
     if (this.editForm.valid) {
-      this.pizzaService.getPizzaById(this.editForm.value)
+      this.pizzaService.updatePizza(this.editForm.value)
       .subscribe(
         data => {
           console.log(data);
