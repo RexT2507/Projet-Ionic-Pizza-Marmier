@@ -18,39 +18,64 @@
 
 <ion-content  [fullscreen]="true">
 
-  <ion-card class="mt-5 mb-5">
+  <div *ngIf="pizza.nom; else wait">
 
-    <img src="{{pizza.photo}}">
+    <ion-card class="mt-5 mb-5">
 
-    <ion-card-header>
-      <ion-card-title>Nom : {{pizza.nom}}</ion-card-title>
-    </ion-card-header>
+      <img src="{{pizza.photo}}">
+  
+      <ion-card-header>
+        <ion-card-title>Nom : {{pizza.nom}}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content class="pt-3">
+        <table class="table text-center">
+          <thead *ngIf="ingredient.length > 1; else oneIngredient">
+            <tr>
+              <th scope="col" class="table-header">Ingrédients</th>
+            </tr>
+          </thead>
+          <ng-template #oneIngredient>
+            <tr>
+              <th scope="col" class="table-header">Ingrédient</th>
+            </tr>
+          </ng-template>
+          <tbody class="table-body">
+            <tr *ngFor="let i of ingredient">
+              <td>{{i?.nom}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+  
+      <ion-card-content>
+        <h2>Prix : {{pizza.prix}} €</h2>
+      </ion-card-content>
+  
+    </ion-card>
 
-    <ion-card-content class="pt-3">
-      <table class="table text-center">
-        <thead *ngIf="ingredient.length > 1; else oneIngredient">
-          <tr>
-            <th scope="col" class="table-header">Ingrédients</th>
-          </tr>
-        </thead>
-        <ng-template #oneIngredient>
-          <tr>
-            <th scope="col" class="table-header">Ingrédient</th>
-          </tr>
-        </ng-template>
-        <tbody class="table-body">
-          <tr *ngFor="let i of ingredient">
-            <td>{{i?.nom}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </ion-card-content>
+  </div>
 
-    <ion-card-content>
-      <h2>Prix : {{pizza.prix}} €</h2>
-    </ion-card-content>
+  <ng-template #wait>
 
-  </ion-card>
+    <div class="card">
+
+      <div class="card-header text-center">
+        Chargement patientez
+      </div>
+
+      <div class="card-body">
+        <img style="height: 290px;" src="../../../assets/wait.gif">
+      </div>
+
+      <div class="card-body-load">
+        <div class="loader"></div>
+      </div>
+
+  
+    </div>
+
+  </ng-template>
 
   <br><br>
 

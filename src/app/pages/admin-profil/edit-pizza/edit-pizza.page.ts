@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PizzaService } from 'src/app/services/pizza.service';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AlertController } from '@ionic/angular';
+import { IngredientService } from 'src/app/services/ingredient.service';
 
 @Component({
   selector: 'app-edit-pizza',
@@ -16,12 +18,24 @@ export class EditPizzaPage implements OnInit {
   editForm: FormGroup;
 
   submitted = false;
-  image: any;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private pizzaService: PizzaService, private camera: Camera) { }
+  image: any = '';
+
+  ingredient: any = [];
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private pizzaService: PizzaService,
+    private camera: Camera,
+    private ingredientService: IngredientService,
+    private alertCtrl: AlertController
+  ) { }
 
   ngOnInit() {
     const pizzaId = localStorage.getItem('pizzaId');
+
+    this.getIngredient();
 
     if (!pizzaId) {
       alert('Il y a un problème');
@@ -33,7 +47,7 @@ export class EditPizzaPage implements OnInit {
       id: [],
       photo: ['', Validators.required],
       nom: ['', Validators.required],
-      ingredient: ['', Validators.required],
+      ingredients: [ [] ],
       prix: ['', Validators.required]
     });
 
@@ -48,6 +62,22 @@ export class EditPizzaPage implements OnInit {
 
   get f() {
     return this.editForm.controls;
+  }
+
+  getIngredient(): void {
+    this.ingredientService.getAllIngredient()
+    .subscribe(res => {
+      this.ingredient = res;
+      console.log(res);
+    });
+  }
+
+  async alertEn() {
+    const alert = await this.alertCtrl.create({
+      header: 'Chargement en cours',
+      message: 'Veuillez patienter'
+    });
+    alert.present();
   }
 
   onSubmit() {
@@ -66,6 +96,16 @@ export class EditPizzaPage implements OnInit {
         }
       );
     }
+  }
+
+  toggleIn(event: any, i: any) {
+    // console.log(event);
+    if (event.detail.checked) {
+      this.editForm.controls.ingredients.value.push(i.id);
+    } else {
+      this.editForm.controls.ingredients.value.splice(this.editForm.controls.ingredients.value.indexOf(i.id), 1);
+    }
+    // console.log(this.addForm.controls.ingredients.value);
   }
 
   openCam() {

@@ -30,8 +30,8 @@
 
         <ion-button (click)="openCam()" color="primary">Prendre une photo</ion-button>
 
-        <div *ngIf="image">
-          <img src="{{image}}">
+        <div *ngIf="addForm.controls.photo.value">
+          <img src="{{addForm.controls.photo.value}}" />
         </div>
 
         <!-- <input type="file" class="inputfile" formControlName="photo" [ngClass]="{'is-invalid': submitted && f.photo.errors}"> -->
@@ -77,7 +77,9 @@
                   {{i.nom}}
                 </div>
                 <div class="icon-right">
-                  <ion-checkbox color="danger"></ion-checkbox>
+
+                  <ion-checkbox color="danger" [checked]="addForm.controls.ingredients.value.indexOf(i.id) > -1" (ionChange)="toggleIn($event, i)"></ion-checkbox>
+
                 </div>
               </td>
     
@@ -86,9 +88,9 @@
     
         </table>
 
-        <div *ngIf="submitted && f.ingredient.errors" class="card-error">
+        <!-- <div *ngIf="submitted && f.ingredient.errors" class="card-error">
           Les ingredients sont requis
-        </div>
+        </div> -->
 
       </div>
       
@@ -96,7 +98,7 @@
 
         <label>Prix :</label>
 
-        <input type="text" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
+        <input type="number" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
 
         <div *ngIf="submitted && f.prix.errors" class="card-error">
           Le prix est requis
