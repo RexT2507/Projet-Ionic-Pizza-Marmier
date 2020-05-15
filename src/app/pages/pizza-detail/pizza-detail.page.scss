@@ -23,3 +23,58 @@ ion-title
     color: white;
     background-color: #d4d642;
 }
+
+.card 
+{
+  margin: 0 auto;
+  float: none;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 295px;
+  background-color: rgba(0,0,0,.03);
+
+  .card-header
+  {
+    background-color: #e23123;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn
+  {
+    color: white;
+    font-weight: bold;
+    background-color: #CED02D;
+  }
+  .btn:hover
+  {
+    color: white;
+    background-color: #e23123;
+    border-color: #CED02D;
+  }
+
+}
+
+.card-body-load 
+{
+  margin: 0 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+.loader {
+  border: 10px solid #CED02D; /* Light grey */
+  border-top: 10px solid #e23123; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
