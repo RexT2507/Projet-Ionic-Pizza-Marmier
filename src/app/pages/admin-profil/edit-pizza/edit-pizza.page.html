@@ -105,7 +105,7 @@
   
           <label>Prix :</label>
   
-          <input type="text" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
+          <input type="number" formControlName="prix" placeholder="Prix" class="form-control" [ngClass]="{'is-invalid': submitted && f.prix.errors}">
   
           <div *ngIf="submitted && f.prix.errors" class="card-error">
             Le prix est requis
