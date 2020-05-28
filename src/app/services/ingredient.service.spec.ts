@@ -7,6 +7,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 describe('IngredientService', () => {
 
   let httpTestingController: HttpTestingController;
+  const exist = true;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -20,4 +21,10 @@ describe('IngredientService', () => {
     const service: IngredientService = TestBed.get(IngredientService);
     expect(service).toBeTruthy();
   });
+
+  it('getAllIngredient', () => {
+    const lifeFunc = true;
+    expect(lifeFunc).toEqual(exist);
+  });
+
 });

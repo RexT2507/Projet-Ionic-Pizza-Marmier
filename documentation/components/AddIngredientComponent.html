@@ -1,0 +1,1118 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Projet-Ionic-Pizza-Marmier documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Projet-Ionic-Pizza-Marmier documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddIngredientComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/add-ingredient/add-ingredient.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-ingredient</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-ingredient.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-ingredient.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addForm">addForm</a>
+                            </li>
+                            <li>
+                                <a href="#ingredient">ingredient</a>
+                            </li>
+                            <li>
+                                <a href="#submitted">submitted</a>
+                            </li>
+                            <li>
+                                <a href="#tbodyLife">tbodyLife</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteIngredient">deleteIngredient</a>
+                            </li>
+                            <li>
+                                <a href="#getIngredient">getIngredient</a>
+                            </li>
+                            <li>
+                                <a href="#hide">hide</a>
+                            </li>
+                            <li>
+                                <a href="#hiden">hiden</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#updateIngredient">updateIngredient</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f">f</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, ingredientService: <a href="../injectables/IngredientService.html">IngredientService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ingredientService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/IngredientService.html" target="_self" >IngredientService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteIngredient"></a>
+                    <span class="name">
+                        <b>
+                            deleteIngredient
+                        </b>
+                        <a href="#deleteIngredient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteIngredient(i: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIngredient"></a>
+                    <span class="name">
+                        <b>
+                            getIngredient
+                        </b>
+                        <a href="#getIngredient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getIngredient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hide"></a>
+                    <span class="name">
+                        <b>
+                            hide
+                        </b>
+                        <a href="#hide"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hide()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hiden"></a>
+                    <span class="name">
+                        <b>
+                            hiden
+                        </b>
+                        <a href="#hiden"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hiden()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateIngredient"></a>
+                    <span class="name">
+                        <b>
+                            updateIngredient
+                        </b>
+                        <a href="#updateIngredient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateIngredient(i: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>i</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addForm"></a>
+                        <span class="name">
+                            <b>
+                            addForm</b>
+                            <a href="#addForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ingredient"></a>
+                        <span class="name">
+                            <b>
+                            ingredient</b>
+                            <a href="#ingredient"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitted"></a>
+                        <span class="name">
+                            <b>
+                            submitted</b>
+                            <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tbodyLife"></a>
+                        <span class="name">
+                            <b>
+                            tbodyLife</b>
+                            <a href="#tbodyLife"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name"><b>f</b><a href="#f"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/components/add-ingredient/add-ingredient.component.ts:72</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { IngredientService } from &#x27;src/app/services/ingredient.service&#x27;;
+
+@Component({
+  selector: &#x27;app-add-ingredient&#x27;,
+  templateUrl: &#x27;./add-ingredient.component.html&#x27;,
+  styleUrls: [&#x27;./add-ingredient.component.scss&#x27;],
+})
+export class AddIngredientComponent implements OnInit {
+
+  addForm: FormGroup;
+  submitted &#x3D; false;
+
+  ingredient: any &#x3D; [];
+
+  tbodyLife &#x3D; true;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private ingredientService: IngredientService
+  ) { }
+
+  ngOnInit() {
+    this.getIngredient();
+    this.addForm &#x3D; this.formBuilder.group({
+      id: [],
+      nom: [&#x27;&#x27;, Validators.required]
+    });
+  }
+
+  getIngredient(): void {
+    this.ingredientService.getAllIngredient()
+    .subscribe(res &#x3D;&gt; {
+      this.ingredient &#x3D; res;
+      // console.log(res);
+    });
+  }
+
+  onSubmit() {
+    this.submitted &#x3D; true;
+    if (this.addForm.valid) {
+      this.ingredientService.addIngredient(this.addForm.value)
+        .subscribe( data &#x3D;&gt; {
+          console.log(data);
+          this.router.navigate([&#x27;/admin-profil/add-ingredient&#x27;]).then(() &#x3D;&gt; {
+            window.location.reload();
+          });
+        });
+    }
+  }
+
+  deleteIngredient(i: any) {
+    this.ingredientService.deleteIngredient(i.id).subscribe(
+      data &#x3D;&gt; {
+        console.log(data);
+        this.router.navigate([&#x27;/admin-profil/add-ingredient&#x27;]).then(() &#x3D;&gt; {
+          window.location.reload();
+        });
+      }
+    );
+  }
+
+  updateIngredient(i: any) {
+    localStorage.removeItem(&#x27;ingredientId&#x27;);
+    localStorage.setItem(&#x27;ingredientId&#x27;, i.id);
+    this.router.navigate([&#x27;edit-ingredient&#x27;]);
+  }
+
+  get f() {
+    return this.addForm.controls;
+  }
+
+
+  hide() {
+    const x &#x3D; document.getElementById(&#x27;addIng&#x27;);
+    if (x.style.display &#x3D;&#x3D;&#x3D; &#x27;none&#x27;) {
+      x.style.display &#x3D; &#x27;block&#x27;;
+    } else {
+      x.style.display &#x3D; &#x27;none&#x27;;
+    }
+  }
+
+  hiden() {
+    const x &#x3D; document.getElementById(&#x27;tbody&#x27;);
+    if (x.style.display &#x3D;&#x3D;&#x3D; &#x27;none&#x27;) {
+      x.removeAttribute(&#x27;style&#x27;);
+      this.tbodyLife &#x3D; false;
+    } else {
+      x.style.display &#x3D; &#x27;none&#x27;;
+      this.tbodyLife &#x3D; true;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;card&quot;&gt;
+
+  &lt;div class&#x3D;&quot;card-header text-center&quot;&gt;
+    Maintenance ingrédient
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;hide()&quot;&gt;Ajouter un ingrédient&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;card-body&quot; style&#x3D;&quot;display: none&quot; id&#x3D;&quot;addIng&quot;&gt;
+
+    &lt;form [formGroup]&#x3D;&quot;addForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+
+        &lt;label&gt;Nom :&lt;/label&gt;
+
+        &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;nom&quot; placeholder&#x3D;&quot;Nom&quot; class&#x3D;&quot;form-control&quot; [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.nom.errors}&quot;&gt;
+
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.nom.errors&quot; class&#x3D;&quot;card-error&quot;&gt;
+          Le nom est requis
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn&quot;&gt;Enregister&lt;/button&gt;
+
+    &lt;/form&gt;
+    
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+    &lt;table class&#x3D;&quot;table&quot;&gt;
+
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope&#x3D;&quot;col&quot; class&#x3D;&quot;table-header&quot;&gt;
+            &lt;div class&#x3D;&quot;text-left&quot;&gt;
+              Liste des ingrédients
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;icon-right&quot; *ngIf&#x3D;&quot;!tbodyLife; else hideList&quot;&gt;
+              &lt;a (click)&#x3D;&quot;hiden()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;remove-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;ng-template #hideList&gt;
+              &lt;div class&#x3D;&quot;icon-right&quot;&gt;
+                &lt;a (click)&#x3D;&quot;hiden()&quot;&gt;
+                  &lt;ion-icon name&#x3D;&quot;add-outline&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/ng-template&gt;
+          &lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+
+      &lt;tbody class&#x3D;&quot;table-body&quot; id&#x3D;&quot;tbody&quot; style&#x3D;&quot;display: none&quot;&gt;
+        &lt;tr *ngFor&#x3D;&quot;let i of ingredient&quot;&gt;
+          &lt;td&gt;
+            &lt;div class&#x3D;&quot;text-left&quot;&gt;
+              {{i.nom}}
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;icon-right&quot;&gt;
+              &lt;a (click)&#x3D;&quot;updateIngredient(i)&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;create-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;/a&gt;
+              &amp;nbsp;
+              &lt;a (click)&#x3D;&quot;deleteIngredient(i)&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;trash-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+
+    &lt;/table&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;&lt;br&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-ingredient.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card 
+{
+  margin: 0 auto;
+  float: none;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 295px;
+  background-color: rgba(0,0,0,.03);
+
+  .card-header
+  {
+    background-color: #e23123;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .btn
+  {
+    color: white;
+    font-weight: bold;
+    background-color: #CED02D;
+  }
+  .btn:hover
+  {
+    color: white;
+    background-color: #e23123;
+    border-color: #CED02D;
+  }
+
+}
+
+.table-header
+{
+    color: white;
+    background-color: #e23123;
+    font-size: 18px;
+    border-radius: .25rem;
+}
+
+.table-body
+{
+    color: white;
+    background-color: #d4d642;
+    border-radius: .25rem;
+}
+
+.text-left
+{
+    float: left;  
+}
+
+.icon-right
+{
+    font-size: 25px;
+    float: right;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">  <div class="card-header text-center">    Maintenance ingrédient  </div>  <div class="card-body">    <button type="submit" class="btn" (click)="hide()">Ajouter un ingrédient</button>  </div>  <div class="card-body" style="display: none" id="addIng">    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">      <div class="form-group">        <label>Nom :</label>        <input type="text" formControlName="nom" placeholder="Nom" class="form-control" [ngClass]="{\'is-invalid\': submitted && f.nom.errors}">        <div *ngIf="submitted && f.nom.errors" class="card-error">          Le nom est requis        </div>      </div>      <button type="submit" class="btn">Enregister</button>    </form>      </div>  <div class="card-body">    <table class="table">      <thead>        <tr>          <th scope="col" class="table-header">            <div class="text-left">              Liste des ingrédients            </div>            <div class="icon-right" *ngIf="!tbodyLife; else hideList">              <a (click)="hiden()">                <ion-icon name="remove-outline"></ion-icon>              </a>            </div>            <ng-template #hideList>              <div class="icon-right">                <a (click)="hiden()">                  <ion-icon name="add-outline"></ion-icon>                </a>              </div>            </ng-template>          </th>        </tr>      </thead>      <tbody class="table-body" id="tbody" style="display: none">        <tr *ngFor="let i of ingredient">          <td>            <div class="text-left">              {{i.nom}}            </div>            <div class="icon-right">              <a (click)="updateIngredient(i)">                <ion-icon name="create-outline"></ion-icon>              </a>              &nbsp;              <a (click)="deleteIngredient(i)">                <ion-icon name="trash-outline"></ion-icon>              </a>            </div>          </td>        </tr>      </tbody>    </table>  </div></div><br><br></div>'
+    var COMPONENTS = [{'name': 'AddIngredientComponent', 'selector': 'app-add-ingredient'},{'name': 'AddPizzaComponent', 'selector': 'app-add-pizza'},{'name': 'AdminProfilPage', 'selector': 'app-admin-profil'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartPage', 'selector': 'app-cart'},{'name': 'EditIngredientPage', 'selector': 'app-edit-ingredient'},{'name': 'EditPizzaPage', 'selector': 'app-edit-pizza'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'PizzaDetailPage', 'selector': 'app-pizza-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddIngredientComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddIngredientComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

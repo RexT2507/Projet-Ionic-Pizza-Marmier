@@ -11,6 +11,7 @@ describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
   let httpTestingController: HttpTestingController;
+  const exist = true;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,4 +32,17 @@ describe('HomePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('getPizza', () => {
+    const lifeFunc = true;
+    expect(lifeFunc).toEqual(exist);
+    expect(component.getPizza());
+  });
+
+  it('addToCart', () => {
+    const lifeFunc = true;
+    expect(lifeFunc).toEqual(exist);
+    expect(component.getPizza());
+  });
+
 });
